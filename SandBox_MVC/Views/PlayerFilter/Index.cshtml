@@ -1,0 +1,46 @@
+﻿@model SandBox_MVC.ViewModels.PlayerFilterVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Find Players
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+           <div class="form-group">
+                <label asp-for="Player.StartDate" class="control-label"></label>
+                <input asp-for="Player.StartDate" class="form-control" />
+                <span asp-validation-for="Player.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.EndDate" class="control-label"></label>
+                <input asp-for="Player.EndDate" class="form-control" />
+                <span asp-validation-for="Player.EndDate" class="text-danger"></span>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Filter</button>
+      </div>
+    </div>
+  </div>
+</div>
+<main>
+    <partial name = "_PlayerListPartial"/>
+</main>
+
+
